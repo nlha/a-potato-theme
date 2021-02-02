@@ -15,13 +15,15 @@ export default {
 </script>
 
 <style>
+  .video-wrap {
+    width: 100%;
+  }
   .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    margin: 1rem;
     padding: 1rem;
   }
   .video-bg {

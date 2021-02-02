@@ -25,7 +25,7 @@ export default {
     let bg2 = document.getElementById('bg2')
 
     window.addEventListener('scroll', e => {
-      if(window.scrollY + 150 > intro.offsetTop) {
+      if(window.scrollY + 150 > intro.offsetTop && window.scrollY < intro.offsetTop + intro.offsetHeight) {
         let floating = (window.scrollY - intro.offsetTop) / intro.offsetHeight
         floating = floating.toFixed(2) * 25
 
@@ -41,12 +41,14 @@ export default {
 </script>
 
 <style>
+  .intro-wrap {
+    width: 100%;
+  }
   .intro-container {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    margin: 1rem;
     padding: 1rem;
   }
   .intro-text {

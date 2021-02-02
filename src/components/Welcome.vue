@@ -24,7 +24,7 @@ export default {
     let textP = document.querySelector('.welcome-text p')
     
     window.addEventListener('scroll', e => {
-      if(window.scrollY + 150 > welcome.offsetTop) {
+      if(window.scrollY + 150 > welcome.offsetTop && window.scrollY < welcome.offsetTop + welcome.offsetHeight) {
         let floating = (window.scrollY - welcome.offsetTop) / welcome.offsetHeight
         floating = floating.toFixed(1) * 10
 
@@ -41,7 +41,6 @@ export default {
   .welcome-container {
     display: flex;
     justify-content: flex-end;
-    margin: 1rem;
     padding: 1rem;
   }
   .potato-bg {
