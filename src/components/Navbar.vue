@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-wrap">
-    <div class="navbar-container">
+    <div id="navbar-container" class="navbar-container">
 
       <div class="nav-logo">Potato</div>
 
@@ -19,14 +19,46 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  mounted() {
+    let position = document.getElementById('navbar-container')
+
+    // making navbar sticky on scrolling
+    window.addEventListener('scroll', e => {
+      if(window.scrollY > position.offsetTop) {
+        position.classList.add('sticky')
+      } else {
+        position.classList.remove('sticky')
+      }
+    })
+  }
 }
 </script>
 
 <style>
   * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+  }
+  .navbar-wrap {
+    height: 100px;
+  }
+  .sticky {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1000ms ease-in-out;
+    z-index: 9999;
+  }
+  .sticky ul li a {
+    color: white;
+    transition: 1000ms ease-in-out;
+  }
+  .sticky .nav-logo {
+    color: burlywood;
+    text-shadow: 1px 0 0 black;
+    transition: 1000ms ease-in-out;
   }
   .navbar-container {
     display: flex;
