@@ -25,9 +25,9 @@ export default {
     let bg2 = document.getElementById('bg2')
 
     window.addEventListener('scroll', e => {
-      if(window.scrollY + 150 > intro.offsetTop && window.scrollY < intro.offsetTop + intro.offsetHeight) {
+      if(window.scrollY + 200 > intro.offsetTop && window.scrollY < intro.offsetTop + intro.offsetHeight) {
         let floating = (window.scrollY - intro.offsetTop) / intro.offsetHeight
-        floating = floating.toFixed(2) * 25
+        floating = floating.toFixed(2) * 20
 
         bg1.style.transform = `translateX(-${floating}px)`
         bg2.style.transform = `translateX(${floating}px)`
