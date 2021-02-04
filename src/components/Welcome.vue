@@ -42,6 +42,7 @@ export default {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
+    background-color: #FBF6ED;
   }
   .potato-bg {
     width: 85vw;

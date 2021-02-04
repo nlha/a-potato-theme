@@ -45,6 +45,7 @@ export default {
     width: 100%;
     height: 100vh;
     padding: 1rem;
+    background-color: #FBF6ED;
   }
   .bg-wrap {
     display: flex;

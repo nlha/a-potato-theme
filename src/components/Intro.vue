@@ -50,6 +50,7 @@ export default {
     width: 100%;
     height: 100vh;
     padding: 1rem;
+    background-color: #F6ECDA;
   }
   .intro-text {
     position: relative;
