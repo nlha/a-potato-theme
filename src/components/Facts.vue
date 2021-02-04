@@ -3,7 +3,7 @@
     <div class="facts-container">
 
       <div id="percent-wrap" class="percent-wrap"><span>{{ percentage }}.{{ fraction }}%</span> fat-free.</div>
-      <p>Potato contains vitamin B6, potassium, and more.</p>
+      <p class="facts-detail">Potato contains vitamin B6, potassium, and more.</p>
 
     </div>
   </div>
@@ -20,11 +20,16 @@ export default {
   },
   mounted() {
     let facts = document.querySelector('.facts-container')
-    let percentText = document.querySelector('.percent-wrap')
+    let percentText = document.querySelector('.percent-wrap span')
+    let percentWrap = document.querySelector('.percent-wrap')
+    let detail = document.querySelector('.facts-detail')
 
     window.addEventListener('scroll', e => {
       if(window.scrollY + 200 >= facts.offsetTop) {
-        facts.style.animation = 'slideIn linear 1000ms forwards'
+        facts.style.animation = 'fadeIn linear 1000ms forwards'
+        percentWrap.style.animation = 'slideFromRight linear 1000ms forwards'
+        percentText.style.animation = 'slideFromLeft linear 1000ms forwards'
+        detail.style.animation = 'fadeIn linear 4000ms forwards'
       }
       if(window.scrollY == facts.offsetTop) {
         this.startTimer()
@@ -75,14 +80,42 @@ export default {
     font-size: 10rem;
     color: burlywood;
   }
-  @keyframes slideIn {
+  @keyframes slideFromLeft {
     0% {
-      transform: translateY(-50%);
+      transform: translateX(-70%);
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
-      opacity: 100%;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideFromRight {
+    0% {
+      transform: translateX(70%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideFromBottom {
+    0% {
+      transform: translateY(-70%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 </style>
